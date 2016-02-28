@@ -34,7 +34,21 @@ fun renderProductTable(): String {
                 }
             }
             val products = getProducts()
-            todoTask39()
+            var idx = 0
+            for (product in products) {
+                tr(getTitleColor()) {
+                    td(color = getCellColor(idx, 0)) {
+                        text(product.description)
+                    }
+                    td(color = getCellColor(idx, 1)) {
+                        text(product.price)
+                    }
+                    td(color = getCellColor(idx, 2)) {
+                        text(product.popularity)
+                    }
+                }
+                idx++
+            }
         }
     }.toString()
 }
